@@ -1,14 +1,23 @@
-/* eslint-disable key-spacing */
 <template>
-  <div id="app">
-    <h1>黑马套条</h1>
-    <router-view />
-  </div>
+<div>
+    <p>黑马头条</p>
+</div>
 </template>
+
 <script>
 export default {
-  name: 'App'
+  created () {},
+  data () {
+    return {}
+  },
+  methods: {},
+  computed: {},
+  watch: {},
+  filters: {},
+  components: {}
 }
 </script>
-<style lang="less">
+
+<style scoped lang='less'>
+
 </style>
