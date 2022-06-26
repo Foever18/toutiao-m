@@ -21,14 +21,15 @@
       <van-field
         v-model="password"
         type="password"
-        name="验证码"
+        name="code"
         placeholder="请输入验证码"
         :rules="[
           { required: true },
           { pattern: /^\d{6}$/, message: '验证码必须是6位' },
         ]"
       >
-        <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i> -->
+        <MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
         <template #button>
           <!-- 倒计时 -->
           <van-count-down
@@ -64,21 +65,27 @@
 </template>
 
 <script>
-import { getSmsCode } from '@/api/user'
+import { getSmsCode, login } from '@/api/user'
 export default {
   created () { },
   data () {
     return {
-      mobile: '13900000000',
+      mobile: '13911111111',
       password: '246810',
       time: 5 * 1000,
       isCountDown: false
     }
   },
   methods: {
-    onSubmit (val) {
-      console.log(val)
-      this.$store.commit('setUser', { name: 1 })
+    // 登录
+    async onSubmit (val) {
+      try {
+        const res = await login(val)
+        this.$store.commit('setUser', res.data.data)
+        this.$toast.success('登录成功')
+      } catch (err) {
+        this.$toast.fail('登录失败')
+      }
     },
     async onSendSms () {
       try {
@@ -86,7 +93,8 @@ export default {
         this.isCountDown = true
         try {
           await getSmsCode(this.mobile)
-          this.$toast.fail('发送成功')
+          // 全局挂载的轻提示
+          this.$toast.success('发送成功')
         } catch (err) {
           this.$toast.fail('发送失败')
         }
