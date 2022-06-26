@@ -1,6 +1,6 @@
 <template>
 <div>
-    <p>黑马头条</p>
+    <p>黑马头条ya\</p>
 </div>
 </template>
 
