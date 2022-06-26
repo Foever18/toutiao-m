@@ -7,9 +7,12 @@ import './style/index.less'
 import '@/style/icon.less'
 // 引入vant
 import Vant from 'vant'
-import 'vant/lib/index.css'
+// 定制主题
+import 'vant/lib/index.less'
+// import 'vant/lib/index.css'
 // rem适配
 import 'amfe-flexible'
+
 Vue.use(Vant)
 Vue.config.productionTip = false
 
