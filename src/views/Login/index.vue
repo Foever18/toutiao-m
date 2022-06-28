@@ -1,9 +1,10 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录"  @click-left='$router.back()'>
       <van-icon name="cross" slot="left" />
     </van-nav-bar>
     <van-form @submit="onSubmit" ref="form">
+      <!-- 手机号 -->
       <van-field
         v-model="mobile"
         name="mobile"
@@ -16,8 +17,10 @@
           },
         ]"
       >
+        <!-- 换成图标后可以去除label -->
         <i class="toutiao toutiao-shouji" slot="left-icon"></i>
       </van-field>
+      <!-- 验证码 -->
       <van-field
         v-model="password"
         type="password"
@@ -70,7 +73,7 @@ export default {
   created () { },
   data () {
     return {
-      mobile: '13911111111',
+      mobile: '13988888888',
       password: '246810',
       time: 5 * 1000,
       isCountDown: false
@@ -83,6 +86,7 @@ export default {
         const res = await login(val)
         this.$store.commit('setUser', res.data.data)
         this.$toast.success('登录成功')
+        this.$router.push({ path: 'my' })
       } catch (err) {
         this.$toast.fail('登录失败')
       }

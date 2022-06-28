@@ -12,6 +12,7 @@ import 'vant/lib/index.less'
 // import 'vant/lib/index.css'
 // rem适配
 import 'amfe-flexible'
+import '@/style/base.less'
 
 import MyIcon from '@/components/MyIcon.vue'
 // 全局注册icon
@@ -20,7 +21,6 @@ Vue.component('MyIcon', MyIcon)
 Vue.use(Vant)
 Vue.config.productionTip = false
 
-const app = 1
 new Vue({
   router,
   store,
