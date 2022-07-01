@@ -15,6 +15,11 @@ import 'amfe-flexible'
 import '@/style/base.less'
 
 import MyIcon from '@/components/MyIcon.vue'
+import * as obj from '@/filters'
+Object.keys(obj).forEach(key => {
+  Vue.filter(key, obj[key])
+})
+console.log(obj)
 // 全局注册icon
 Vue.component('MyIcon', MyIcon)
 

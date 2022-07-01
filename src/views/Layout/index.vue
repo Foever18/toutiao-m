@@ -1,6 +1,9 @@
 <template>
   <div>
-    <router-view class="main"></router-view>
+    <keep-alive :include="['Home']">
+      <router-view class="main"></router-view>
+    </keep-alive>
+
     <van-tabbar route>
       <van-tabbar-item icon="home-o" replace to="/home"
         >首页
@@ -29,7 +32,7 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.main{
+.main {
   padding-bottom: 100px;
   background-color: #f5f7f9;
 }
