@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 标题 -->
+    <!-- 标题搜索 -->
     <van-nav-bar fixed left-arrow>
       <template #title
         ><van-button

@@ -16,10 +16,10 @@ import '@/style/base.less'
 
 import MyIcon from '@/components/MyIcon.vue'
 import * as obj from '@/filters'
+// 全局挂载筛选器
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })
-console.log(obj)
 // 全局注册icon
 Vue.component('MyIcon', MyIcon)
 
