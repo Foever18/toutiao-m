@@ -15,8 +15,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-vars': 'off',
     'vue/multi-word-component-names': 0,
-    'vue/no-mutating-props': 0
+    'vue/no-mutating-props': 0,
+    camelcase: 0
     // 'Unknown word': 0
-    // indent: 0
   }
 }

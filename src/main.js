@@ -16,6 +16,14 @@ import '@/style/base.less'
 
 import MyIcon from '@/components/MyIcon.vue'
 import * as obj from '@/filters'
+
+import '@/components'
+// import FollowUser from '@/components/FollowUser.vue'
+// import CollectArticle from '@/components/CollectArticle.vue'
+
+// // 全局挂载组件
+// Vue.component(FollowUser.name, FollowUser)
+// Vue.component(CollectArticle.name, CollectArticle)
 // 全局挂载筛选器
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
